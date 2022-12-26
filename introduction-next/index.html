@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello to Next</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="text/javascript">
+      //Get a whole div by id
+      const app = document.getElementById("app");
+      //Create element <h1></h1> add to Dom
+      const header = document.createElement("h1");
+      const footer = document.createElement("h2");
+      //Create content for h1
+      const headerContent = document.createTextNode(
+        "Develop brain is so much damaged to mental health"
+      );
+      const footerContent = document.createTextNode(
+        "Nah, develop some shit is good about mental health"
+      );
+      //Append -> eklemek, add dom to down to top
+      //first add last child and then second add last child parent.
+      header.appendChild(headerContent);
+      footer.appendChild(footerContent);
+      //Append child run top to down. So First element must first piority for interpreting
+      app.appendChild(header);
+      app.appendChild(footer);
+    </script>
+  </body>
+</html>
