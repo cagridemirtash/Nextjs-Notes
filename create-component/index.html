@@ -15,19 +15,33 @@
     <script type="text/jsx">
       const app = document.getElementById("app");
 
-      function Header(props) {
-        return <h1>Hello {props.hello}</h1>;
+      function Header(name) {
+        console.log(name)
+        return <h1>Hello {name.hello}</h1>;
       }
 
-      function HomePage(props) {
+      function HomePage({hello}) {
+        const allData = ["Java","JavaScript","TypeScript"];
+
+        function handleClick(){
+          console.log("Click mechanism handle by this method")
+        }
+
         return (
           <div>
-            <Header hello={props.hello} />
+            <Header hello={hello} />
+            <ul>
+              {allData.map((data) => (
+                <li key={data}>{data}</li>
+              ))}
+            </ul>
+
+            <button onClick={handleClick}>Like</button>
           </div>
         );
       }
 
-      ReactDOM.render(<HomePage hello = "Çağrı"/>, app);
+      ReactDOM.render(<HomePage hello = "Burak Bey"/>, app);
     </script>
   </body>
 </html>
