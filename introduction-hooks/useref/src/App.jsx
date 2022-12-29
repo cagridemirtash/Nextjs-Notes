@@ -1,7 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
 import { useRef } from 'react';
-import { useState } from 'react';
 
 function App() {
   let ref = useRef(0)
