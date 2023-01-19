@@ -3,6 +3,9 @@ import Layout from "../../components/Layout/layout";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import utilStyles from "../../styles/utils.module.css";
 
+// Use path because all data fetch by this method
+// return paths is array of objects that contain params
+// fallback -> false means that other routes should 404 page
 export async function getStaticPaths() {
   const paths = getAllPostIds();
   return {
@@ -10,7 +13,7 @@ export async function getStaticPaths() {
     fallback: false,
   };
 }
-
+// Fetch spesific data with params that come from getStaticPaths method above.
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id);
   return {

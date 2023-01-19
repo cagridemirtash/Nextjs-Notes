@@ -28,7 +28,6 @@ export default function Home({ allPostsData }) {
               <Link href={`/posts/${id}`}>{title}</Link>
               <br />
               <small className={utilStyles.lightText}>
-                {console.log("Date type", typeof date)}
                 {date === undefined ? (
                   <div>undefined</div>
                 ) : (
